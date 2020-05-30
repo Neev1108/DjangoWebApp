@@ -1,0 +1,17 @@
+
+{% extends 'base_template.html' %}
+
+{% block content %}
+
+<div class = "accounts">
+  {% for account in accounts %}
+  	<div class = "account">
+  	<h2>
+  		<a href= "#">{{ account.toString }}</a>
+  	</h2>
+  	
+    </div>
+  {% endfor %}
+</div>
+  
+{% endblock %}

@@ -23,5 +23,7 @@ urlpatterns = [
     path('', views.account_list),
     path('signup/', views.signup, name = "signup"),
     path('login/', views.login_view, name= "login"),
-    path('logout/', views.logout_view, name= "logout")
+    path('logout/', views.logout_view, name= "logout"),
+    path('bank-account-menu/', views.BA_menu, name = "bank account main menu"),
+    path('create-account/', views.createAccount, name = "create a new account")
 ]

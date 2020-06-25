@@ -4,13 +4,19 @@ from django.contrib.auth.models import User
 
 # Type is checking or savings
 class Account(models.Model):
-    first_name = models.CharField(max_length = 25)
-    last_name = models.CharField(max_length = 25)
+    customer = models.ForeignKey(User, default=None, on_delete=models.CASCADE)
+    balance = models.IntegerField(default=0)
     date_created = models.DateTimeField(auto_now_add = True)
+    type = models.CharField(max_length = 1, default= None)
     
     
-    
+
     def toString(self):
-        return self.first_name + " " + self.last_name
+        type = self.type
+        if self.type == "S":
+            type = "Savings"
+        else:
+            type = "Checking"
+        return "$" + str(self.balance) + " | " + type
     
 

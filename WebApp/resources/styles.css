@@ -1,9 +1,8 @@
 body{
     background-color: #0f121f;
-    background-image: url(/static/MainWeb.jpg);
-    background-repeat-y: no-repeat;
     color: #fff;
 }
+
 
 
 body *{

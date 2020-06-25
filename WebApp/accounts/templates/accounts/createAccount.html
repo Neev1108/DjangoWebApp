@@ -1,0 +1,15 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+<div class = "create-account">
+    <h1>Create a new Bank Account</h1>
+    <form action="" method = "post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Create">
+    </form>
+</div>
+
+
+
+{% endblock %}

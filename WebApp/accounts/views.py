@@ -42,8 +42,8 @@ def logout_view(request):
     
 @login_required(login_url= "http://127.0.0.1:8000/accounts/login/")
 def BA_menu(request):
-   # accounts = Account.objects.raw('SELECT * FROM Accounts WHERE name =' + request.user.id)
-    return render(request, 'accounts/BA_menu.html')
+    accounts = Account.objects.filter(customer = request.user).order_by("date_created")
+    return render(request, 'accounts/BA_menu.html', {"accounts": accounts})
 
 @login_required(login_url= "http://127.0.0.1:8000/accounts/login/")
 def createAccount(request):

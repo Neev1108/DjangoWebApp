@@ -3,7 +3,26 @@
 {% block content %}
 <h1> Bank Account Menu </h1>
 
-<a href="http://127.0.0.1:8000/accounts/create-account">Create a new Account</a>
+<div class="options">
+  <a href="http://127.0.0.1:8000/accounts/create-account">Create a new Account</a>
+</div>
 
+<hr>
+<div class="accountsList">
+  {% for account in accounts %}
+  <h2> <u>Current Accounts</u>
+    <p>
+      <li>
+        <div class="account">
+          {{ account.toString }}
+          <a href="#">Withdraw</a>
+          <a href="#">Deposit</a>
+        </div>
+      </li>
+    </p>
+  </h2>
+
+  {% endfor %}
+</div>
 
 {% endblock %}
